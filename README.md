@@ -22,11 +22,18 @@ To use it, you need to provide a few things, listed in this table:
 
 | JSON   | Function  | Is required?  |
 |---|---|---|
-| token  | Authentication  | Yes  |
+| sender | Who's the email sending from | Yes |
 | receiver  | Who you're sending this email to  | Yes |
 | subject  | Your email's subject  | Yes |
 | bodyText  | Your email's body (text)  | No, if you provided bodyHTML* |
 | bodyHTML  | Your email's body (HTML)  | No, if you provided bodyText* |
+
+To actually authenticate yourself, pass your token as "Token [YOUR TOKEN HERE]" - similar to "Bearer [BEARER]"
+| Header | Function | Is required?
+|--|--|--|
+| Authorization: "Token [YOUR TOKEN]" | Authentication | Yes |
+
+
 
 *It should be noted that a body is not required. It should also be noted that if you provide both text & HTML, your HTML will be prioritised and sent. Use of an 'official' client is recommended, due to its 'read from file' functionality. You could, of course, implement this yourself.
 
