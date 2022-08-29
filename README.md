@@ -33,6 +33,20 @@ To actually authenticate yourself, pass your token as "Token [YOUR TOKEN HERE]" 
 |--|--|--|
 | Authorization: "Token [YOUR TOKEN]" | Authentication | Yes |
 
+Here's an example using cURL:
+
+```shell
+curl -X POST \
+  'https://takeout.bysourfruit.com/api/email/send' \
+  --header 'Accept: */*' \
+  --header 'Authorization: Token YOUR_TOKEN_HERE' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'sender=YOUR_SENDER' \
+  --data-urlencode 'receiver=YOUR_RECEIVER' \
+  --data-urlencode 'subject=YOUR_SUBJECT' \
+  --data-urlencode 'bodyText=YOUR_TEXT_BODY'
+  --data-urlencode 'bodyHTML=YOUR_HTML_BODY'
+```
 
 
 *It should be noted that a body is not required. It should also be noted that if you provide both text & HTML, your HTML will be prioritised and sent. Use of an 'official' client is recommended, due to its 'read from file' functionality. You could, of course, implement this yourself.
