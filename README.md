@@ -6,6 +6,8 @@
 ## JavaScript 🔗
 You can find the docs for Takeout.js **[here](https://github.com/Takeout-bysourfruit/takeout.js)**. 
 
+Here's a more "blog"-style **[dev.to post](https://dev.to/takeout/getting-started-with-takeout-using-nodejs-5407)** which helps you get started with Takeout. 
+
 ## Python 🔗
 You can find the docs for Takeout.py **[here](https://github.com/Takeout-bysourfruit/takeout.py)**. 
 
@@ -51,4 +53,4 @@ curl -X POST \
 
 *It should be noted that a body is not required. It should also be noted that if you provide both text & HTML, your HTML will be prioritised and sent. Use of an 'official' client is recommended, due to its 'read from file' functionality. You could, of course, implement this yourself.
 
-**There are more endpoints, mainly either used by Takeout.web, or they're just not ready for public use. Examples include email verification via SMTP, getting an archive of any emails sent by you within the last 48 hours, and more. This functionality might be available in the clients, or in the Takeout Dashboard.
+**There are more endpoints, mainly either used by Takeout.website, or they're just not ready for public use. Examples include email verification via SMTP, getting an archive of any emails sent by you within the last 48 hours, and more. This functionality might be available in the clients, or in the Takeout Dashboard.
