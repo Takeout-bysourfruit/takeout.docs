@@ -51,6 +51,6 @@ curl -X POST \
 ```
 
 
-*It should be noted that a body is not required. It should also be noted that if you provide both text & HTML, your HTML will be prioritised and sent. Use of an 'official' client is recommended, due to its 'read from file' functionality. You could, of course, implement this yourself.
+*It should be noted that a body is not required. It should also be noted that if you provide both text & HTML, your HTML will be prioritised and sent. Use of an 'official' client is recommended, but not required. 
 
-**There are more endpoints, mainly either used by Takeout.website, or they're just not ready for public use. Examples include email verification via SMTP, getting an archive of any emails sent by you within the last 48 hours, and more. This functionality might be available in the clients, or in the Takeout Dashboard.
+**There are more endpoints, mainly either used by Takeout's website (e.g to get usage statistics), or they're just not ready for public use. Examples include email verification via SMTP, getting an archive of any emails sent by you within the last 48 hours, and more. This functionality might be available in the clients, or in the Takeout Dashboard.
