@@ -54,3 +54,25 @@ curl -X POST \
 *It should be noted that a body is not required. It should also be noted that if you provide both text & HTML, your HTML will be prioritised and sent. Use of an 'official' client is recommended, but not required. 
 
 **There are more endpoints, mainly either used by Takeout's website (e.g to get usage statistics), or they're just not ready for public use. Examples include email verification via SMTP, getting an archive of any emails sent by you within the last 48 hours, and more. This functionality might be available in the clients, or in the Takeout Dashboard.
+
+## Using Webhooks :bell:
+
+Configure Webhooks in the Takeout **[dashboard](https://takeout.bysourfruit.com/dashboard)**, found in the Webhooks tab. Provide Takeout with a URL that's able to receive POST requests, and watch the magic happen. 
+
+Takeout will send JSON similar to this:
+```json
+{
+  "notification": "read", *
+  "bounced": false,
+  "data": {
+    "email": "pika@chu.con", *
+    "from": "\"Pikachu\" <takeout@bysourfruit.com>", *
+    "wasRead": true,
+    "emailID": "123PIKA123"
+  }
+}
+```
+
+Fields marked using an asterisk (\*\) will always be provided with values. Fields without them may sometimes arrive with 'null' , 'unknown' , or 'undefined' instead of usable data.
+
+In your own code, you can filter webhook notifications just by reading the 'notification' value, which will always have 'sent' , 'bounce' or 'read' as a value. When Takeout tests your endpoint, it'll prepend 'test-' to the notification value (e.g 'test-bounce')
