@@ -76,3 +76,21 @@ Takeout will send JSON similar to this:
 Fields marked using an asterisk (\*\) will always be provided with values. Fields without them may sometimes arrive with 'null' , 'unknown' , or 'undefined' instead of usable data.
 
 In your own code, you can filter webhook notifications just by reading the 'notification' value, which will always have 'sent' , 'bounce' or 'read' as a value. When Takeout tests your endpoint, it'll prepend 'test-' to the notification value (e.g 'test-bounce')
+
+## Takeout Cloud ☁️
+If you're a Takeout+ subscriber, and have uploaded a template(s) via the Takeout **[dashboard](https://takeout.bysourfruit.com/dashboard)**, you can retrieve the template (as a string) via the API. 
+
+You do so by getting the name of the template (e.g) `SomeRandomCloudTemplate.html` from the dashboard. The dashboard should display something similar to this:
+
+![](https://i.ibb.co/FzXgSRs/Screenshot-2022-10-09-at-3-37-33-pm.png)
+
+The URL to get the template:
+```
+https://cdn-takeout.bysourfruit.com/cloud/read?name={file}&token={token}
+```
+
+So, in this case:
+```
+https://cdn-takeout.bysourfruit.com/cloud/read?name=SomeRandomCloudTemplate.html&token=YOUR_TOKEN_HERE
+```
+
